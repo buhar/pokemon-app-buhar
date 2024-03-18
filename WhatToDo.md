@@ -17,10 +17,14 @@ for better maintainability and performance.
 
 **Tickets:**
 
+<img top="10%" width="20%" align="right"  src="https://github.com/Artichoke-Holding/pokemon-app/assets/117400571/c3a40d1d-c840-4759-a255-aa90f47d3581" />
+
+
 1. **Implement Lazy Loading for Pokémon List:** (On Home Page)
     - Integrate lazy loading mechanism to fetch and display Pokémon data from the provided API.
     - Load 25 Pokémon per page, dynamically fetching more as the user scrolls.
     - Each Pokémon tile should display its picture, name, base_experience, and a button/icon to play its latest 'cries' sounds.
+  
 
 2. **Add Sorting Functionality to Pokémon List:**
     - Implement sorting functionality in the app bar of the home page to allow users to sort Pokémon by name or base_experience.

@@ -7,6 +7,12 @@ that interacts with the Pokémon API to display information about Pokémon and u
 game. Your task is to implement various features, applying a flutter app design pattern, fix existing errors, and refactor the codebase 
 for better maintainability and performance.
 
+> [!IMPORTANT]  
+> **It is essential for the code to be clean, well-organized, and easily extensible and maintainable.**
+
+> [!NOTE]  
+> _If using Riverpod is complicated for you, you can alternatively use BloC or Provider. However, I recommend using Riverpod._
+
 **APIs:**
  - Users API: local JSON file
  - Pokémon API: https://pokeapi.co/api/v2/pokemon
@@ -70,7 +76,7 @@ for better maintainability and performance.
     - Improve the overall UI/UX design of the application to ensure a seamless and visually appealing user experience.
     - Pay attention to details such as layout, typography, color scheme, and animations to create an engaging interface.
     - Ensure the app is responsive and user-friendly across different devices and screen sizes.
-    - Targeted devices: Android, iOS, and Web.
+    - Targeted devices: Android, iOS, and Web. (IOS could be ignored.)
 
 11. **Your Ideas:**
     - Be creative and innovative in your approach, considering the app's purpose and target audience.

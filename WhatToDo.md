@@ -13,6 +13,8 @@ for better maintainability and performance.
 > [!NOTE]  
 > _If using Riverpod is complicated for you, you can alternatively use BloC or Provider. However, I recommend using Riverpod._
 
+If you have any questions, you can [email me](mailto://sadra.babai@artichoke.eu).
+
 **APIs:**
  - Users API: local JSON file
  - Pokémon API: https://pokeapi.co/api/v2/pokemon

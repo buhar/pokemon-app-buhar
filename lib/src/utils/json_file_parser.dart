@@ -15,15 +15,15 @@ class JsonFileParser<T> {
     required String listName,
     required T Function(Map<String, dynamic> value) parser,
   }) async {
-    String data = await DefaultAssetBundle.of(_context).loadString(path);
-    final jsonResult = jsonDecode(data);
-    final List<T> result = (jsonResult[listName] as List).map((e) {
+    final data = await DefaultAssetBundle.of(_context).loadString(path);
+    final jsonResult = jsonDecode(data) as Map<String, dynamic>;
+    final result = (jsonResult[listName] as List).map((e) {
       log('e: $e', name: 'JsonFileParser: ');
       return parser(e as Map<String, dynamic>);
     }).toList();
 
     return Future.delayed(
-      Duration(seconds: 1),
+      const Duration(seconds: 1),
       () => result,
     );
   }

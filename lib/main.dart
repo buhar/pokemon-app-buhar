@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:myinfogame/home_page.dart';
-import 'package:myinfogame/user_page.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:myinfogame/src/features/pokemons/presentation/pokemons_page.dart';
 
 void main() {
-  runApp(const MyInfoGameApp());
+  runApp(
+    // ProviderScope enables Riverpod for the entire project
+    const ProviderScope(child: MyInfoGameApp()),
+  );
 }
 
 class MyInfoGameApp extends StatelessWidget {
@@ -13,7 +16,7 @@ class MyInfoGameApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'My Info Game',
-      home: HomePage(),
+      home: PokemonsPage(),
     );
   }
 }

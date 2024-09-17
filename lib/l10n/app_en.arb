@@ -1,0 +1,16 @@
+{
+  "@@locale": "en",
+  "users": "Users",
+  "sortBy": "Sort by",
+  "defaultSort": "Default",
+  "name": "Name",
+  "baseExperience": "Base Experience",
+  "abilities": "Abilities",
+  "sprites": "Sprites",
+  "moves": "Moves",
+  "types": "Types",
+  "species": "Species",
+  "color": "Color",
+  "shape": "Shape",
+  "close": "Close"
+}

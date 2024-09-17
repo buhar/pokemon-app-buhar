@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:myinfogame/src/features/pokemons/data/pokemon_repository.dart';
 import 'package:myinfogame/src/utils/string_extensions.dart';
@@ -20,14 +21,23 @@ class PokemonSpeciesDialog extends StatelessWidget {
         );
 
         return AlertDialog(
-          title: const Text('Species'),
+          title: Text(AppLocalizations.of(context)!.species),
           content: pokemonSpeciesAsync.when(
             data: (pokemonSpecies) => Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                SpeciesItem(title: 'Name', value: pokemonSpecies.name),
-                SpeciesItem(title: 'Color', value: pokemonSpecies.color?.name),
-                SpeciesItem(title: 'Shape', value: pokemonSpecies.shape?.name),
+                SpeciesItem(
+                  title: AppLocalizations.of(context)!.name,
+                  value: pokemonSpecies.name,
+                ),
+                SpeciesItem(
+                  title: AppLocalizations.of(context)!.color,
+                  value: pokemonSpecies.color?.name,
+                ),
+                SpeciesItem(
+                  title: AppLocalizations.of(context)!.shape,
+                  value: pokemonSpecies.shape?.name,
+                ),
               ],
             ),
             loading: () => const SizedBox.shrink(
@@ -38,7 +48,7 @@ class PokemonSpeciesDialog extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('Close'),
+              child: Text(AppLocalizations.of(context)!.close),
             ),
           ],
         );

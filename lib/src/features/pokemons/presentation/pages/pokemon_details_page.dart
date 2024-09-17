@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:myinfogame/src/features/pokemons/data/pokemon_repository.dart';
 import 'package:myinfogame/src/features/pokemons/domain/pokemon_details.dart';
@@ -29,7 +30,7 @@ class PokemonDetailsPage extends ConsumerWidget {
           );
         },
         icon: const Icon(Icons.account_tree_outlined),
-        label: const Text('SPECIES'),
+        label: Text(AppLocalizations.of(context)!.species),
       ),
       body: CustomScrollView(
         slivers: [
@@ -129,10 +130,22 @@ class PokemonDetailsPage extends ConsumerWidget {
               return SliverList.list(
                 children: [
                   const SizedBox(height: 8),
-                  InfoCard(title: 'Abilities', chips: abilities),
-                  PicturesCard(title: 'Sprites', imageUrls: spritesUrls),
-                  InfoCard(title: 'Moves', chips: moves),
-                  InfoCard(title: 'Types', chips: types),
+                  InfoCard(
+                    title: AppLocalizations.of(context)!.abilities,
+                    chips: abilities,
+                  ),
+                  PicturesCard(
+                    title: AppLocalizations.of(context)!.sprites,
+                    imageUrls: spritesUrls,
+                  ),
+                  InfoCard(
+                    title: AppLocalizations.of(context)!.moves,
+                    chips: moves,
+                  ),
+                  InfoCard(
+                    title: AppLocalizations.of(context)!.types,
+                    chips: types,
+                  ),
                 ],
               );
             },

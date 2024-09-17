@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:myinfogame/src/features/pokemons/presentation/pages/pokemons_page.dart';
 
@@ -26,7 +27,10 @@ class SortBottomSheet extends ConsumerWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Sort by:', style: Theme.of(context).textTheme.titleMedium),
+          Text(
+            AppLocalizations.of(context)!.sortBy,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
           const SizedBox(height: 8),
           ToggleButtons(
             isSelected: selected,
@@ -34,10 +38,10 @@ class SortBottomSheet extends ConsumerWidget {
               minHeight: 40,
               minWidth: (MediaQuery.of(context).size.width - 36) / 3,
             ),
-            children: const [
-              Text('Default'),
-              Text('Name'),
-              Text('Base Experience'),
+            children: [
+              Text(AppLocalizations.of(context)!.defaultSort),
+              Text(AppLocalizations.of(context)!.name),
+              Text(AppLocalizations.of(context)!.baseExperience),
             ],
             onPressed: (int index) {
               ref.read(pokemonSort.notifier).state = PokemonSort.values[index];

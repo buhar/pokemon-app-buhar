@@ -1,0 +1,16 @@
+{
+  "@@locale": "de",
+  "users": "Benutzer",
+  "sortBy": "Sortieren nach",
+  "defaultSort": "Standard",
+  "name": "Name",
+  "baseExperience": "Basis-Erfahrung",
+  "abilities": "Fähigkeiten",
+  "sprites": "Sprites",
+  "moves": "Bewegungen",
+  "types": "Typen",
+  "species": "Spezies",
+  "color": "Farbe",
+  "shape": "Form",
+  "close": "Schließen"
+}

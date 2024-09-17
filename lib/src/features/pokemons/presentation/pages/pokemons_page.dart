@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:myinfogame/src/features/pokemons/data/pokemon_repository.dart';
+import 'package:myinfogame/src/features/pokemons/presentation/widgets/choose_language.dart';
 import 'package:myinfogame/src/features/pokemons/presentation/widgets/pokemon_card.dart';
 import 'package:myinfogame/src/features/pokemons/presentation/widgets/pokemon_card_shimmer.dart';
 import 'package:myinfogame/src/features/pokemons/presentation/widgets/sort_bottom_sheet.dart';
@@ -43,19 +45,12 @@ class PokemonsPage extends StatelessWidget {
                         ..pop()
                         ..pushNamed(AppRoute.users.name);
                     },
-                    child: const Text('Users'),
+                    child: Text(AppLocalizations.of(context)!.users),
                   ),
                 ),
-                PopupMenuItem(
+                const PopupMenuItem(
                   value: 'toggleButtons',
-                  child: ToggleButtons(
-                    isSelected: const [true, false],
-                    onPressed: print,
-                    children: const [
-                      Text('En'),
-                      Text('De'),
-                    ],
-                  ),
+                  child: ChooseLanguage(),
                 ),
               ];
             },

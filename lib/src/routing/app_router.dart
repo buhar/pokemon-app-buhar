@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:myinfogame/src/features/pokemons/presentation/pages/pokemon_details_page.dart';
 import 'package:myinfogame/src/features/pokemons/presentation/pages/pokemons_page.dart';
+import 'package:myinfogame/src/features/users/presentation/user_page.dart';
 
 enum AppRoute {
   pokemons,
@@ -34,6 +35,14 @@ final goRouterProvider = Provider<GoRouter>((ref) {
             },
           ),
         ],
+      ),
+      GoRoute(
+        name: AppRoute.users.name,
+        path: '/users',
+        pageBuilder: (context, state) => MaterialPage(
+          key: state.pageKey,
+          child: const UserPage(),
+        ),
       ),
     ],
   );

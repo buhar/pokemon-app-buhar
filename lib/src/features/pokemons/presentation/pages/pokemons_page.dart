@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:myinfogame/src/features/pokemons/data/pokemon_repository.dart';
 import 'package:myinfogame/src/features/pokemons/presentation/widgets/pokemon_card.dart';
 import 'package:myinfogame/src/features/pokemons/presentation/widgets/pokemon_card_shimmer.dart';
 import 'package:myinfogame/src/features/pokemons/presentation/widgets/sort_bottom_sheet.dart';
-import 'package:myinfogame/src/features/users/presentation/user_page.dart';
+import 'package:myinfogame/src/routing/app_router.dart';
 
 class PokemonsPage extends StatelessWidget {
   const PokemonsPage({super.key});
@@ -38,12 +39,9 @@ class PokemonsPage extends StatelessWidget {
                   value: 'users',
                   child: TextButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const UserPage(),
-                        ),
-                      );
+                      context
+                        ..pop()
+                        ..pushNamed(AppRoute.users.name);
                     },
                     child: const Text('Users'),
                   ),

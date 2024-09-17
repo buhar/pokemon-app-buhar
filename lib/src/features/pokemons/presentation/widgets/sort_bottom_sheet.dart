@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:myinfogame/src/features/pokemons/presentation/pokemons_page.dart';
+import 'package:myinfogame/src/features/pokemons/presentation/pages/pokemons_page.dart';
 
 class SortBottomSheet extends ConsumerWidget {
   const SortBottomSheet({super.key});

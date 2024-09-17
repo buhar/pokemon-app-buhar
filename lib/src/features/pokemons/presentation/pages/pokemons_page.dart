@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:myinfogame/src/features/pokemons/data/pokemon_repository.dart';
-import 'package:myinfogame/src/features/pokemons/presentation/pokemon_card.dart';
-import 'package:myinfogame/src/features/pokemons/presentation/pokemon_card_shimmer.dart';
-import 'package:myinfogame/src/features/pokemons/presentation/sort_bottom_sheet.dart';
+import 'package:myinfogame/src/features/pokemons/presentation/widgets/pokemon_card.dart';
+import 'package:myinfogame/src/features/pokemons/presentation/widgets/pokemon_card_shimmer.dart';
+import 'package:myinfogame/src/features/pokemons/presentation/widgets/sort_bottom_sheet.dart';
 import 'package:myinfogame/src/features/users/presentation/user_page.dart';
 
 class PokemonsPage extends StatelessWidget {

@@ -336,5 +336,136 @@ class _FetchPokemonDetailsProviderElement
   @override
   String get id => (origin as FetchPokemonDetailsProvider).id;
 }
+
+String _$fetchPokemonSpeciesHash() =>
+    r'be73c42c287a78dbb62504c8cceceb23d04b13d8';
+
+/// See also [fetchPokemonSpecies].
+@ProviderFor(fetchPokemonSpecies)
+const fetchPokemonSpeciesProvider = FetchPokemonSpeciesFamily();
+
+/// See also [fetchPokemonSpecies].
+class FetchPokemonSpeciesFamily extends Family<AsyncValue<PokemonSpecies>> {
+  /// See also [fetchPokemonSpecies].
+  const FetchPokemonSpeciesFamily();
+
+  /// See also [fetchPokemonSpecies].
+  FetchPokemonSpeciesProvider call({
+    required String id,
+  }) {
+    return FetchPokemonSpeciesProvider(
+      id: id,
+    );
+  }
+
+  @override
+  FetchPokemonSpeciesProvider getProviderOverride(
+    covariant FetchPokemonSpeciesProvider provider,
+  ) {
+    return call(
+      id: provider.id,
+    );
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'fetchPokemonSpeciesProvider';
+}
+
+/// See also [fetchPokemonSpecies].
+class FetchPokemonSpeciesProvider
+    extends AutoDisposeFutureProvider<PokemonSpecies> {
+  /// See also [fetchPokemonSpecies].
+  FetchPokemonSpeciesProvider({
+    required String id,
+  }) : this._internal(
+          (ref) => fetchPokemonSpecies(
+            ref as FetchPokemonSpeciesRef,
+            id: id,
+          ),
+          from: fetchPokemonSpeciesProvider,
+          name: r'fetchPokemonSpeciesProvider',
+          debugGetCreateSourceHash:
+              const bool.fromEnvironment('dart.vm.product')
+                  ? null
+                  : _$fetchPokemonSpeciesHash,
+          dependencies: FetchPokemonSpeciesFamily._dependencies,
+          allTransitiveDependencies:
+              FetchPokemonSpeciesFamily._allTransitiveDependencies,
+          id: id,
+        );
+
+  FetchPokemonSpeciesProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.id,
+  }) : super.internal();
+
+  final String id;
+
+  @override
+  Override overrideWith(
+    FutureOr<PokemonSpecies> Function(FetchPokemonSpeciesRef provider) create,
+  ) {
+    return ProviderOverride(
+      origin: this,
+      override: FetchPokemonSpeciesProvider._internal(
+        (ref) => create(ref as FetchPokemonSpeciesRef),
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        id: id,
+      ),
+    );
+  }
+
+  @override
+  AutoDisposeFutureProviderElement<PokemonSpecies> createElement() {
+    return _FetchPokemonSpeciesProviderElement(this);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is FetchPokemonSpeciesProvider && other.id == id;
+  }
+
+  @override
+  int get hashCode {
+    var hash = _SystemHash.combine(0, runtimeType.hashCode);
+    hash = _SystemHash.combine(hash, id.hashCode);
+
+    return _SystemHash.finish(hash);
+  }
+}
+
+mixin FetchPokemonSpeciesRef on AutoDisposeFutureProviderRef<PokemonSpecies> {
+  /// The parameter `id` of this provider.
+  String get id;
+}
+
+class _FetchPokemonSpeciesProviderElement
+    extends AutoDisposeFutureProviderElement<PokemonSpecies>
+    with FetchPokemonSpeciesRef {
+  _FetchPokemonSpeciesProviderElement(super.provider);
+
+  @override
+  String get id => (origin as FetchPokemonSpeciesProvider).id;
+}
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

@@ -3,7 +3,8 @@ import 'dart:async';
 import 'package:dio/dio.dart';
 import 'package:myinfogame/src/features/pokemons/domain/pokemon.dart';
 import 'package:myinfogame/src/features/pokemons/domain/pokemon_details.dart';
-import 'package:myinfogame/src/features/pokemons/presentation/pokemons_page.dart';
+import 'package:myinfogame/src/features/pokemons/domain/pokemon_species.dart';
+import 'package:myinfogame/src/features/pokemons/presentation/pages/pokemons_page.dart';
 import 'package:myinfogame/src/utils/dio_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -123,6 +124,20 @@ class PokemonRepository {
 
     return PokemonDetails.fromJson(response.data as Map<String, dynamic>);
   }
+
+  Future<PokemonSpecies> fetchPokemonSpecies({
+    required String id,
+  }) async {
+    final uri = Uri(
+      scheme: 'https',
+      host: 'pokeapi.co',
+      path: '/api/v2/pokemon-species/$id',
+    );
+
+    final response = await client.getUri(uri);
+
+    return PokemonSpecies.fromJson(response.data as Map<String, dynamic>);
+  }
 }
 
 @riverpod
@@ -196,4 +211,13 @@ Future<PokemonDetails> fetchPokemonDetails(
     id: id,
     cancelToken: cancelToken,
   );
+}
+
+@riverpod
+Future<PokemonSpecies> fetchPokemonSpecies(
+  FetchPokemonSpeciesRef ref, {
+  required String id,
+}) {
+  final pokemonRepository = ref.watch(pokemonRepositoryProvider);
+  return pokemonRepository.fetchPokemonSpecies(id: id);
 }
